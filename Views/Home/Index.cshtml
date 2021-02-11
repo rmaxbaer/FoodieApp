@@ -1,0 +1,32 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+    ViewBag.PageTitle = "Welcome to the Foodies of Provo Site";
+}
+<!--take the passed in array of reviews into an IEnumerable-->
+@model IEnumerable<FoodieApp.Models.Review> 
+<div>
+    <h4>Our Current Top 5:</h4>
+    <table class="table table-striped">
+        <thead>
+            <tr><th scope="col">Rank</th><th scope="col">Restaurant Name</th><th scope="col">Favorite Dish</th><th scope="col">Address</th><th scope="col">Restaurant Phone #</th><th scope="col">Link to Website</th></tr>
+        </thead>
+        <tbody>
+
+            <!--iterate through each review, and put each attribute in the appropriate column-->
+            @foreach (Review r in Model)
+            {
+            <tr>
+                <th scope="row">@r.Rank</th>
+                <td>@r.RestaurantName</td>
+                <td>@r.FavoriteDish</td>
+                <td>@r.Address</td>
+                <td>@r.RestaurantPhone</td>
+                <td>@r.RestaurantLink</td>
+            </tr>
+            }
+        </tbody>
+    </table>
+</div>
+
+
+

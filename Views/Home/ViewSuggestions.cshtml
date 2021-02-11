@@ -1,0 +1,25 @@
+﻿@{
+    ViewBag.Title = "Suggestions";
+    ViewBag.PageTitle = "Here are some other suggestions that have been made.";
+}
+
+@model IEnumerable<FoodieApp.Models.Suggestion>
+
+<div>
+    <table class="table table-striped">
+        <thead>
+            <tr><th scope="col">Name</th><th scope="col">Restaurant Name</th><th scope="col">Favorite Dish</th><th scope="col">Restaurant Phone</th></tr>
+        </thead>
+        <tbody>
+            @foreach (FoodieApp.Models.Suggestion s in Model)
+            {
+                <tr>
+                    <th scope="row">@s.Name</th>
+                    <td>@s.RestaurantName</td>
+                    <td>@s.FavoriteDish</td>
+                    <td>@s.RestaurantPhone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
